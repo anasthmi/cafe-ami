@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Ami | Tea Room & Bistro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#2c5e3b',
+                            lightgreen: '#3e7b52',
+                            sage: '#8fad93',
+                            sagelight: '#eaf0ec',
+                            wood: '#6e3b1e',
+                            woodlight: '#8c4a26',
+                            cream: '#f9f8f3',
+                            creamdark: '#eeebe0',
+                            gold: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9f8f3;
+            color: #222222;
+        }
+        .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .wood-pattern {
+            background-color: #6e3b1e;
+            background-image: radial-gradient(#8c4a26 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-neutral-800 antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-md border-b border-brand-green/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-brand-green text-white flex items-center justify-center font-serif-title font-bold text-xl shadow-md group-hover:bg-brand-wood transition-colors">
+                        A
+                    </div>
+                    <div>
+                        <span class="font-serif-title text-2xl font-bold tracking-tight text-brand-green block leading-none">Café Ami</span>
+                        <span class="text-xs uppercase tracking-widest text-brand-wood font-medium block mt-1">Tea Room & Bistro</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+                    <a href="#home" class="text-neutral-700 hover:text-brand-green transition-colors">Startseite</a>
+                    <a href="#tagesmenue" class="text-neutral-700 hover:text-brand-green transition-colors">Tagesmenü</a>
+                    <a href="#speisekarte" class="text-neutral-700 hover:text-brand-green transition-colors">Speisekarte</a>
+                    <a href="#terrasse" class="text-neutral-700 hover:text-brand-green transition-colors">Terrasse</a>
+                    <a href="#ueber-uns" class="text-neutral-700 hover:text-brand-green transition-colors">Über uns</a>
+                    <a href="#kontakt" class="text-neutral-700 hover:text-brand-green transition-colors">Kontakt & Reservation</a>
+                </nav>
+
+                <!-- Header Call Button -->
+                <div class="hidden sm:flex items-center">
+                    <a href="tel:+41000000000" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-lightgreen text-white font-medium px-5 py-2.5 rounded-full shadow-sm hover:shadow transition-all text-sm">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span>Anrufen: 0XX XXX XX XX</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" type="button" class="lg:hidden p-2 rounded-md text-neutral-700 hover:text-brand-green hover:bg-brand-creamdark focus:outline-none" aria-label="Menü öffnen">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-brand-green/10 bg-brand-cream px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-neutral-700 hover:bg-brand-sagelight hover:text-brand-green">Startseite</a>
+            <a href="#tagesmenue" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-neutral-700 hover:bg-brand-sagelight hover:text-brand-green">Tagesmenü</a>
+            <a href="#speisekarte" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-neutral-700 hover:bg-brand-sagelight hover:text-brand-green">Speisekarte</a>
+            <a href="#terrasse" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-neutral-700 hover:bg-brand-sagelight hover:text-brand-green">Terrasse</a>
+            <a href="#ueber-uns" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-neutral-700 hover:bg-brand-sagelight hover:text-brand-green">Über uns</a>
+            <a href="#kontakt" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-neutral-700 hover:bg-brand-sagelight hover:text-brand-green">Kontakt & Reservation</a>
+            <div class="pt-2">
+                <a href="tel:+41000000000" class="flex items-center justify-center gap-2 bg-brand-green text-white font-medium px-4 py-3 rounded-xl w-full text-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Tisch telefonisch reservieren</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative py-16 lg:py-24 overflow-hidden border-b border-brand-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content Left -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sagelight text-brand-green text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-mug-hot"></i> Traditioneller Schweizer Tea Room & Bistro
+                    </div>
+                    
+                    <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight">
+                        Willkommen im <span class="text-brand-green italic">Café Ami</span>
+                    </h1>
+                    
+                    <p class="text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Geniessen Sie gemütliche Stunden in unserem nostalgischen Ambience mit edlen Holzakzenten, frisch gebühtem Tee, feinstem Kaffee und hausgemachten Tagesspezialitäten.
+                    </p>
+
+                    <!-- Quick Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#tagesmenue" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-lightgreen text-white font-semibold px-7 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all text-base">
+                            <span>Tagesmenü ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="tel:+41000000000" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-wood hover:bg-brand-woodlight text-white font-semibold px-7 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all text-base">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Tisch per Telefon reservieren</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-neutral-200/80 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div>
+                            <span class="block font-serif-title text-xl font-bold text-brand-wood">Täglich</span>
+                            <span class="text-xs text-neutral-500">Frische Tagesmenüs</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif-title text-xl font-bold text-brand-wood">Terrasse</span>
+                            <span class="text-xs text-neutral-500">Sonnige Sitzplätze</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif-title text-xl font-bold text-brand-wood">Klassiker</span>
+                            <span class="text-xs text-neutral-500">Tee & Hausgebäck</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Right -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Retro Styled Card Backdrop inspired by interior -->
+                        <div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-brand-green to-brand-wood opacity-20 blur-lg"></div>
+                        <div class="relative bg-white p-4 sm:p-6 rounded-2xl shadow-xl border border-neutral-100">
+                            <!-- Showcase Interior Aesthetics -->
+                            <div class="aspect-[4/3] rounded-xl bg-brand-sagelight overflow-hidden relative mb-4 flex items-center justify-center">
+                                <div class="text-center p-6">
+                                    <div class="w-16 h-16 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mx-auto mb-3">
+                                        <i class="fa-solid fa-store text-2xl"></i>
+                                    </div>
+                                    <h3 class="font-serif-title text-2xl font-bold text-brand-green">Gemütliche Atmosphäre</h3>
+                                    <p class="text-sm text-neutral-600 mt-1">Echtes Schweizer Tea-Room Flair mit stilvollen Sitzecken & Retro-Eleganz</p>
+                                </div>
+                            </div>
+
+                            <!-- Info Box -->
+                            <div class="bg-brand-cream rounded-xl p-4 border border-brand-green/10 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-wood/10 text-brand-wood flex items-center justify-center font-bold">
+                                        <i class="fa-regular fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-semibold text-neutral-500 uppercase">Öffnungszeiten</div>
+                                        <div class="text-sm font-bold text-neutral-800">Mo – Sa: 07:00 – 18:30 Uhr</div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">Geöffnet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Menu Section (Tagesmenü / Semaine) -->
+    <section id="tagesmenue" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Frisch & Regional</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900 mt-1">Unser Tagesmenü der Woche</h2>
+                <p class="text-neutral-600 mt-2">Jeden Tag bieten wir Ihnen wechselnde, frisch zubereitete Menüs inklusive Tagessuppe oder kleinem Salat.</p>
+            </div>
+
+            <!-- Menu Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Monday Menu -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Montag</span>
+                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 19.50</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Schweinschnitzel "Wiener Art"</h3>
+                    <p class="text-neutral-600 text-sm mb-4">Mit knusprigen Pommes Frites, frischem Marktgemüse und Tagessuppe als Vorspeise.</p>
+                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
+                    </div>
+                </div>
+
+                <!-- Tuesday Menu -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Dienstag</span>
+                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 18.50</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Hausgemachtes Hackbraten</h3>
+                    <p class="text-neutral-600 text-sm mb-4">An kräftiger Rotweinsauce, serviert mit feinem Kartoffelstock und Bohnen im Speckmantel.</p>
+                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
+                    </div>
+                </div>
+
+                <!-- Wednesday Menu -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Mittwoch</span>
+                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 21.00</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Zürcher Geschnetzeltes</h3>
+                    <p class="text-neutral-600 text-sm mb-4">Zartes Kalbfleisch an Rahmsauce mit Champignons, serviert mit goldbrauner Schweizer Rösti.</p>
+                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
+                    </div>
+                </div>
+
+                <!-- Thursday Menu -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Donnerstag</span>
+                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 19.00</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Poulardenbrüstchen an Kräutersauce</h3>
+                    <p class="text-neutral-600 text-sm mb-4">Saftiges Hähnchenbrustfilet mit Rosmarinkartoffeln und gedünstetem Sommergemüse.</p>
+                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
+                    </div>
+                </div>
+
+                <!-- Friday Menu -->
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Freitag</span>
+                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 20.50</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Eglifilet nach Müllerin Art</h3>
+                    <p class="text-neutral-600 text-sm mb-4">In Butter gebratene Eglifilets mit Mandeln, Salzkartoffeln und frischer Zitrone.</p>
+                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
+                    </div>
+                </div>
+
+                <!-- Vegetarian Highlight -->
+                <div class="bg-brand-sagelight p-6 rounded-2xl border border-brand-green/20 hover:shadow-md transition-shadow relative">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-wood text-white text-xs font-bold px-3 py-1 rounded-full">Vegetarisch</span>
+                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 17.50</span>
+                    </div>
+                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Hausgemachte Spinat-Ricotta Ravioli</h3>
+                    <p class="text-neutral-600 text-sm mb-4">In Salbeibutter geschwenkt mit frisch geriebenem Sbrinz Käse und Cherrytomaten.</p>
+                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                        <i class="fa-solid fa-leaf"></i> Täglich frisch verfügbar
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Reservation Hint -->
+            <div class="mt-10 bg-brand-cream border border-brand-wood/20 rounded-xl p-6 text-center max-w-2xl mx-auto">
+                <p class="text-neutral-700 text-sm font-medium">
+                    Möchten Sie einen Tisch für die Mittagspause reservieren?
+                </p>
+                <div class="mt-3">
+                    <a href="tel:+41000000000" class="inline-flex items-center gap-2 text-brand-green hover:text-brand-lightgreen font-bold text-base underline underline-offset-4">
+                        <i class="fa-solid fa-phone"></i> Jetzt per Telefon Tisch reservieren
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Menu Section (Speisekarte) -->
+    <section id="speisekarte" class="py-16 lg:py-24 bg-brand-cream border-t border-b border-brand-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Unsere Auswahl</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900 mt-1">Speise- & Getränkekarte</h2>
+                <p class="text-neutral-600 mt-2">Vom morgendlichen Frühstück über herzhafte Schweizer Gerichte bis zum nachmittäglichen Tee.</p>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10" id="menu-tabs">
+                <button onclick="switchTab('kaffee')" id="tab-kaffee" class="tab-btn active bg-brand-green text-white font-medium px-5 py-2.5 rounded-full text-sm shadow-sm transition-all">
+                    <i class="fa-solid fa-coffee mr-1.5"></i> Kaffee & Tee
+                </button>
+                <button onclick="switchTab('fruehstueck')" id="tab-fruehstueck" class="tab-btn bg-white hover:bg-brand-sagelight text-neutral-700 font-medium px-5 py-2.5 rounded-full text-sm shadow-sm transition-all">
+                    <i class="fa-solid fa-bread-slice mr-1.5"></i> Frühstück & Gebäck
+                </button>
+                <button onclick="switchTab('speisen')" id="tab-speisen" class="tab-btn bg-white hover:bg-brand-sagelight text-neutral-700 font-medium px-5 py-2.5 rounded-full text-sm shadow-sm transition-all">
+                    <i class="fa-solid fa-utensils mr-1.5"></i> Warme Speisen & Klassiker
+                </button>
+                <button onclick="switchTab('getraenke')" id="tab-getraenke" class="tab-btn bg-white hover:bg-brand-sagelight text-neutral-700 font-medium px-5 py-2.5 rounded-full text-sm shadow-sm transition-all">
+                    <i class="fa-solid fa-wine-glass mr-1.5"></i> Erfrischungen & Weine
+                </button>
+            </div>
+
+            <!-- Tab Content Containers -->
+            <div class="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-brand-green/10">
+                
+                <!-- Tab 1: Kaffee & Tee -->
+                <div id="content-kaffee" class="tab-content space-y-6">
+                    <h3 class="font-serif-title text-2xl font-bold text-brand-green border-b border-brand-green/10 pb-3">Spezialitäten aus der Kaffeemaschine & Teekarte</h3>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Café Crème / Espresso</div>
+                                <div class="text-xs text-neutral-500">Aromatisch & frisch gebrüht</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 4.50</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Cappuccino / Milchkaffee</div>
+                                <div class="text-xs text-neutral-500">Mit feinstem Milchschaum</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.20</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Latte Macchiato</div>
+                                <div class="text-xs text-neutral-500">Im hohen Glas serviert</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.80</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Crowning's Premium Tee</div>
+                                <div class="text-xs text-neutral-500">Schwarz, Grün, Kamille, Pfefferminz, Hain</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 4.80</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Heiße Schokolade / Ovomaltine</div>
+                                <div class="text-xs text-neutral-500">Schweizer Schokoladengenuss</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.00</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Café Melange</div>
+                                <div class="text-xs text-neutral-500">Mit frischer Schlagsahne</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.60</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Frühstück & Gebäck -->
+                <div id="content-fruehstueck" class="tab-content hidden space-y-6">
+                    <h3 class="font-serif-title text-2xl font-bold text-brand-green border-b border-brand-green/10 pb-3">Frühstück & Feines Gebäck</h3>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Schweizer Frühstück</div>
+                                <div class="text-xs text-neutral-500">2 Gipfeli, Butter, Marmelade, Heissgetränk</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 12.50</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Gourmet Frühstück</div>
+                                <div class="text-xs text-neutral-500">Brotkorb, Käse, Schinken, Ei, O-Saft, Kaffee</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 19.50</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Buttergipfeli / Rustico</div>
+                                <div class="text-xs text-neutral-500">Täglich frisch vom Bäcker</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 2.20</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Hausgemachter Apfelkuchen</div>
+                                <div class="text-xs text-neutral-500">Option mit Schlagrahm</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Warme Speisen & Klassiker -->
+                <div id="content-speisen" class="tab-content hidden space-y-6">
+                    <h3 class="font-serif-title text-2xl font-bold text-brand-green border-b border-brand-green/10 pb-3">Bistro Klassiker & Warme Gerichte</h3>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Schweizer Senn-Rösti</div>
+                                <div class="text-xs text-neutral-500">Mit Speck und Spiegelei überbacken</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 18.50</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Hausgemachte Quiche Lorraine</div>
+                                <div class="text-xs text-neutral-500">Mit kleinem grünen Salat</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 14.00</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Club Sandwich "Café Ami"</div>
+                                <div class="text-xs text-neutral-500">Hähnchen, Ei, Speck, Tomate & Pommes</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 17.50</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Tagessuppe der Saison</div>
+                                <div class="text-xs text-neutral-500">Serviert mit frischem Landbrot</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 8.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Erfrischungen & Weine -->
+                <div id="content-getraenke" class="tab-content hidden space-y-6">
+                    <h3 class="font-serif-title text-2xl font-bold text-brand-green border-b border-brand-green/10 pb-3">Erfrischungsgetränke & Ausgewählte Weine</h3>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Mineralwasser (Rivella, Henniez)</div>
+                                <div class="text-xs text-neutral-500">33cl Flasche</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 4.20</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Frisch gepresster Orangensaft</div>
+                                <div class="text-xs text-neutral-500">20cl Glas</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.50</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Schweizer Weisswein (Fendant)</div>
+                                <div class="text-xs text-neutral-500">10cl Glas</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 5.80</span>
+                        </div>
+                        <div class="flex justify-between border-b border-dashed border-neutral-200 pb-2">
+                            <div>
+                                <div class="font-semibold text-neutral-800">Schweizer Rotwein (Pinot Noir)</div>
+                                <div class="text-xs text-neutral-500">10cl Glas</div>
+                            </div>
+                            <span class="font-serif-title font-bold text-brand-wood">CHF 6.20</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Terrace Section (Terrasse) -->
+    <section id="terrasse" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Visual Box for Terrace -->
+                <div class="relative order-2 lg:order-1">
+                    <div class="bg-brand-sagelight rounded-3xl p-8 border border-brand-green/20 relative overflow-hidden">
+                        <!-- Decorative sun icon -->
+                        <div class="absolute -right-6 -bottom-6 text-brand-green/10 text-9xl">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <div class="relative z-10 space-y-4">
+                            <span class="inline-block px-3 py-1 bg-brand-green text-white text-xs font-bold rounded-full uppercase tracking-wider">Aussenbereich</span>
+                            <h3 class="font-serif-title text-3xl font-bold text-neutral-900">Sonnige Boulevard-Terrasse</h3>
+                            <p class="text-neutral-600 leading-relaxed">
+                                Geniessen Sie Ihren Kaffee, ein kühles Getränk oder Ihr Mittagessen an der frischen Luft. Unsere geschützte Terrasse mit gemütlichen roten Polstern lädt zum Verweilen und Beobachten des bunten Treibens ein.
+                            </p>
+                            
+                            <ul class="space-y-2 text-sm text-neutral-700 pt-2">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-green"></i>
+                                    <span>Gemütliche Sitzkissen & Tische im Freien</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-green"></i>
+                                    <span>Ideal für sonnige Nachmittage & Kaffeepausen</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-green"></i>
+                                    <span>Bedienung auch im Aussenbereich</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terrace Content Text -->
+                <div class="space-y-6 order-1 lg:order-2">
+                    <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Sommer & Sonne</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900">Geniessen auf unserer Café Ami Terrasse</h2>
+                    <p class="text-neutral-600 leading-relaxed">
+                        Ob eine kurze Kaffeepause am Morgen, ein entspanntes Mittagessen im Freien oder ein Erfrischungsgetränk am Nachmittag – unsere Terrasse ist der ideale Treffpunkt im Herzen der Stadt.
+                    </p>
+                    <div class="pt-2">
+                        <a href="tel:+41000000000" class="inline-flex items-center gap-2 bg-brand-wood hover:bg-brand-woodlight text-white font-medium px-6 py-3 rounded-full shadow transition-all text-sm">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Terrassentisch per Telefon anfragen</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (Über uns) -->
+    <section id="ueber-uns" class="py-16 lg:py-24 bg-brand-cream border-t border-brand-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Tradition & Herzlichkeit</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900">Über das Café Ami</h2>
+                    
+                    <p class="text-neutral-600 leading-relaxed">
+                        Das **Café Ami** ist ein Ort der Begegnung, an dem Schweizer Gastfreundschaft und zeitloser Tea-Room-Charme aufeinandertreffen. Unsere charakteristische Inneneinrichtung mit edlem Holz, behaglichen grünen Nischen und warmem Licht schafft eine wohlige Atmosphäre für Jung und Alt.
+                    </p>
+                    <p class="text-neutral-600 leading-relaxed">
+                        Wir legen grössten Wert auf persönliche Bedienung, frische Qualitätsprodukte und eine entspannte Umgebung. Egal ob Sie auf einen schnellen Espresso vorbeischauen oder ausgiebig zu Mittag essen möchten – bei uns sind Sie stets herzlich willkommen.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="bg-white p-4 rounded-xl border border-brand-green/10 shadow-sm">
+                            <i class="fa-solid fa-heart text-brand-green text-xl mb-2"></i>
+                            <h4 class="font-bold text-neutral-800">Familiär & Persönlich</h4>
+                            <p class="text-xs text-neutral-500 mt-1">Ein freundliches Lächeln und aufmerksamer Service stehen bei uns an erster Stelle.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-brand-green/10 shadow-sm">
+                            <i class="fa-solid fa-shield-halved text-brand-green text-xl mb-2"></i>
+                            <h4 class="font-bold text-neutral-800">Qualität & Frische</h4>
+                            <p class="text-xs text-neutral-500 mt-1">Ausgewählte Zutaten für unsere täglichen Menüs und feinstes Gebäck.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retro Interior Feature Box -->
+                <div class="lg:col-span-5">
+                    <div class="bg-brand-green text-white p-8 rounded-3xl shadow-lg relative overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+                        <h3 class="font-serif-title text-2xl font-bold mb-4 text-brand-cream">Ein Ort zum Wohlfühlen</h3>
+                        <p class="text-sm text-neutral-200 leading-relaxed mb-6">
+                            "Unser Tea Room zeichnet sich durch seine gemütlichen Sitzbooths im nostalgischen Grün aus – der perfekte Rückzugsort für gute Gespräche."
+                        </p>
+                        <div class="pt-4 border-t border-white/20 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm font-bold">Ihr Café Ami Team</div>
+                                <div class="text-xs text-neutral-300">Tea Room & Bistro in der Schweiz</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Phone Reservation Section (Kontakt & Reservation) -->
+    <section id="kontakt" class="py-16 lg:py-24 bg-white border-t border-brand-green/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Kontakt & Tischreservation</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900 mt-1">Besuchen Sie uns oder rufen Sie uns an</h2>
+                <p class="text-neutral-600 mt-2">Wir freuen uns auf Ihren Besuch! Tischreservierungen nehmen wir gerne direkt am Telefon entgegen.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Direct Phone Reservation Card -->
+                <div class="lg:col-span-6 bg-brand-cream p-8 rounded-3xl border-2 border-brand-green/20 shadow-md">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-bold uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-phone"></i> Telefonische Reservation
+                    </div>
+                    
+                    <h3 class="font-serif-title text-3xl font-bold text-neutral-900 mb-3">Tisch telefonisch reservieren</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed mb-6">
+                        Um Ihnen den besten Platz garantieren zu können, bitten wir Sie, Tische für Mittagessen oder Gruppen direkt per Telefon zu reservieren.
+                    </p>
+
+                    <!-- Prominent Call Button Box -->
+                    <div class="bg-white p-6 rounded-2xl border border-brand-green/10 text-center space-y-4 shadow-sm">
+                        <div class="text-xs text-neutral-500 uppercase tracking-wider font-semibold">Direktkontakt & Reservationen</div>
+                        <a href="tel:+41000000000" class="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-lightgreen text-white font-bold text-xl sm:text-2xl px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all w-full">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>0XX XXX XX XX</span>
+                        </a>
+                        <p class="text-xs text-neutral-500 italic">Klicken Sie einfach auf die Nummer, um direkt anzurufen.</p>
+                    </div>
+
+                    <div class="mt-6 space-y-3 text-sm text-neutral-700">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-info-circle text-brand-green mt-1"></i>
+                            <span>Keine Online-Buchung nötig – sprechen Sie direkt mit unserem Team.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-users text-brand-green mt-1"></i>
+                            <span>Spezielle Wünsche für Gruppen nehmen wir gerne persönlich entgegen.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Column (Opening hours & Address) -->
+                <div class="lg:col-span-6 space-y-6">
+                    
+                    <!-- Location Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-neutral-200 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-sagelight text-brand-green flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-neutral-900 text-lg">Adresse & Anfahrt</h4>
+                                <p class="text-xs text-neutral-500">Café Ami Tea Room & Bistro</p>
+                            </div>
+                        </div>
+                        <p class="text-neutral-700 text-sm leading-relaxed mb-3">
+                            Hauptstrasse 12<br>
+                            CH-8000 Schweiz
+                        </p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-2 text-brand-green hover:text-brand-lightgreen text-sm font-semibold">
+                            <span>Auf Google Maps anzeigen</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Opening Hours Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-neutral-200 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-wood/10 text-brand-wood flex items-center justify-center text-xl">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-neutral-900 text-lg">Öffnungszeiten</h4>
+                                <p class="text-xs text-neutral-500">Wir freuen uns auf Ihren Besuch</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm text-neutral-700">
+                            <div class="flex justify-between py-1 border-b border-neutral-100">
+                                <span class="font-medium">Montag – Freitag:</span>
+                                <span class="font-semibold text-brand-green">07:00 – 18:30 Uhr</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-neutral-100">
+                                <span class="font-medium">Samstag:</span>
+                                <span class="font-semibold text-brand-green">07:30 – 17:00 Uhr</span>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span class="font-medium">Sonntag:</span>
+                                <span class="text-neutral-400">Geschlossen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-400 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <!-- Footer Brand -->
+                <div class="text-center md:text-left">
+                    <span class="font-serif-title text-2xl font-bold text-white block">Café Ami</span>
+                    <span class="text-xs uppercase tracking-widest text-brand-sage block mt-1">Tea Room & Bistro Schweiz</span>
+                </div>
+
+                <!-- Footer Nav Links -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+                    <a href="#home" class="hover:text-white transition-colors">Startseite</a>
+                    <a href="#tagesmenue" class="hover:text-white transition-colors">Tagesmenü</a>
+                    <a href="#speisekarte" class="hover:text-white transition-colors">Speisekarte</a>
+                    <a href="#terrasse" class="hover:text-white transition-colors">Terrasse</a>
+                    <a href="#ueber-uns" class="hover:text-white transition-colors">Über uns</a>
+                    <a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a>
+                </div>
+
+                <!-- Footer Call CTA -->
+                <div>
+                    <a href="tel:+41000000000" class="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-lightgreen text-white font-medium px-4 py-2 rounded-full text-xs transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Reservation: 0XX XXX XX XX</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-neutral-800 text-center text-xs text-neutral-500">
+                <p>&copy; <span id="year"></span> Café Ami. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactivity Script -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Tab Switching Logic for Speisekarte
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-green', 'text-white');
+                btn.classList.add('bg-white', 'text-neutral-700');
+            });
+
+            // Show target content
+            const targetContent = document.getElementById('content-' + tabId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+
+            // Activate target button
+            const targetBtn = document.getElementById('tab-' + tabId);
+            if (targetBtn) {
+                targetBtn.classList.remove('bg-white', 'text-neutral-700');
+                targetBtn.classList.add('bg-brand-green', 'text-white');
+            }
+        }
+    </script>
+</body>
+</html>
