@@ -200,110 +200,107 @@
     </section>
 
     <!-- Daily Menu Section (Tagesmenü / Semaine) -->
-    <section id="tagesmenue" class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Frisch & Regional</span>
-                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900 mt-1">Unser Tagesmenü der Woche</h2>
-                <p class="text-neutral-600 mt-2">Jeden Tag bieten wir Ihnen wechselnde, frisch zubereitete Menüs inklusive Tagessuppe oder kleinem Salat.</p>
+   <!-- Daily Menu Section (Tagesmenü / Dynamic Decap CMS Integration) -->
+<section id="tagesmenue" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-brand-wood font-semibold text-sm uppercase tracking-widest">Frisch & Regional</span>
+            <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-neutral-900 mt-1">Unser Tagesmenü</h2>
+            <p id="menu-date" class="text-neutral-600 mt-2 font-medium">Aktuelles Tagesangebot wird geladen...</p>
+        </div>
+
+        <!-- Dynamic Menu Cards Container -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <!-- Starter / Vorspeise -->
+            <div id="starter-card" class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Vorspeise</span>
+                </div>
+                <h3 id="starter-title" class="font-bold text-lg text-neutral-900 mb-2">Tagessuppe / Salat</h3>
+                <p id="starter-desc" class="text-neutral-600 text-sm mb-4">Wird geladen...</p>
+                <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-check"></i> Im Menü inbegriffen
+                </div>
             </div>
 
-            <!-- Menu Cards Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Monday Menu -->
-                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Montag</span>
-                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 19.50</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Schweinschnitzel "Wiener Art"</h3>
-                    <p class="text-neutral-600 text-sm mb-4">Mit knusprigen Pommes Frites, frischem Marktgemüse und Tagessuppe als Vorspeise.</p>
-                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
-                    </div>
+            <!-- Main Dish 1 -->
+            <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Hauptgang 1</span>
+                    <span id="main1-price" class="font-serif-title font-bold text-xl text-brand-wood">CHF --.--</span>
                 </div>
-
-                <!-- Tuesday Menu -->
-                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Dienstag</span>
-                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 18.50</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Hausgemachtes Hackbraten</h3>
-                    <p class="text-neutral-600 text-sm mb-4">An kräftiger Rotweinsauce, serviert mit feinem Kartoffelstock und Bohnen im Speckmantel.</p>
-                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
-                    </div>
+                <h3 id="main1-title" class="font-bold text-lg text-neutral-900 mb-2">Hauptgericht</h3>
+                <p id="main1-desc" class="text-neutral-600 text-sm mb-4">Wird geladen...</p>
+                <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-check"></i> Inkl. Tagessuppe oder Salat
                 </div>
-
-                <!-- Wednesday Menu -->
-                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Mittwoch</span>
-                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 21.00</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Zürcher Geschnetzeltes</h3>
-                    <p class="text-neutral-600 text-sm mb-4">Zartes Kalbfleisch an Rahmsauce mit Champignons, serviert mit goldbrauner Schweizer Rösti.</p>
-                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
-                    </div>
-                </div>
-
-                <!-- Thursday Menu -->
-                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Donnerstag</span>
-                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 19.00</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Poulardenbrüstchen an Kräutersauce</h3>
-                    <p class="text-neutral-600 text-sm mb-4">Saftiges Hähnchenbrustfilet mit Rosmarinkartoffeln und gedünstetem Sommergemüse.</p>
-                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
-                    </div>
-                </div>
-
-                <!-- Friday Menu -->
-                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Freitag</span>
-                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 20.50</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Eglifilet nach Müllerin Art</h3>
-                    <p class="text-neutral-600 text-sm mb-4">In Butter gebratene Eglifilets mit Mandeln, Salzkartoffeln und frischer Zitrone.</p>
-                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-check"></i> Inkl. Tagessuppe & Salat
-                    </div>
-                </div>
-
-                <!-- Vegetarian Highlight -->
-                <div class="bg-brand-sagelight p-6 rounded-2xl border border-brand-green/20 hover:shadow-md transition-shadow relative">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="bg-brand-wood text-white text-xs font-bold px-3 py-1 rounded-full">Vegetarisch</span>
-                        <span class="font-serif-title font-bold text-xl text-brand-wood">CHF 17.50</span>
-                    </div>
-                    <h3 class="font-bold text-lg text-neutral-900 mb-2">Hausgemachte Spinat-Ricotta Ravioli</h3>
-                    <p class="text-neutral-600 text-sm mb-4">In Salbeibutter geschwenkt mit frisch geriebenem Sbrinz Käse und Cherrytomaten.</p>
-                    <div class="text-xs text-brand-green font-medium flex items-center gap-1">
-                        <i class="fa-solid fa-leaf"></i> Täglich frisch verfügbar
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Reservation Hint -->
-            <div class="mt-10 bg-brand-cream border border-brand-wood/20 rounded-xl p-6 text-center max-w-2xl mx-auto">
-                <p class="text-neutral-700 text-sm font-medium">
-                    Möchten Sie einen Tisch für die Mittagspause reservieren?
-                </p>
-                <div class="mt-3">
-                    <a href="tel:+41000000000" class="inline-flex items-center gap-2 text-brand-green hover:text-brand-lightgreen font-bold text-base underline underline-offset-4">
-                        <i class="fa-solid fa-phone"></i> Jetzt per Telefon Tisch reservieren
-                    </a>
+            <!-- Main Dish 2 -->
+            <div class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full">Hauptgang 2</span>
+                    <span id="main2-price" class="font-serif-title font-bold text-xl text-brand-wood">CHF --.--</span>
                 </div>
+                <h3 id="main2-title" class="font-bold text-lg text-neutral-900 mb-2">Tagesempfehlung</h3>
+                <p id="main2-desc" class="text-neutral-600 text-sm mb-4">Wird geladen...</p>
+                <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-check"></i> Inkl. Tagessuppe oder Salat
+                </div>
+            </div>
+
+            <!-- Dessert -->
+            <div id="dessert-card" class="bg-brand-cream p-6 rounded-2xl border border-brand-green/10 hover:shadow-md transition-shadow relative">
+                <div class="flex justify-between items-start mb-4">
+                    <span class="bg-brand-wood text-white text-xs font-bold px-3 py-1 rounded-full">Dessert</span>
+                </div>
+                <h3 id="dessert-title" class="font-bold text-lg text-neutral-900 mb-2">Tagesdessert</h3>
+                <p id="dessert-desc" class="text-neutral-600 text-sm mb-4">Wird geladen...</p>
+                <div class="text-xs text-brand-green font-medium flex items-center gap-1">
+                    <i class="fa-solid fa-utensils"></i> Hausgemachte Süssspeise
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Reservation Phone Box -->
+        <div class="mt-10 bg-brand-cream border border-brand-wood/20 rounded-xl p-6 text-center max-w-2xl mx-auto">
+            <p class="text-neutral-700 text-sm font-medium">
+                Möchten Sie einen Tisch für die Mittagspause reservieren?
+            </p>
+            <div class="mt-3">
+                <a href="tel:+41000000000" class="inline-flex items-center gap-2 text-brand-green hover:text-brand-lightgreen font-bold text-base underline underline-offset-4">
+                    <i class="fa-solid fa-phone"></i> Jetzt per Telefon Tisch reservieren
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Script to pull JSON data saved by Decap CMS -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('./data/daily-menu.json')
+      .then(response => {
+        if (!response.ok) throw new Error("JSON file not found");
+        return response.json();
+      })
+      .then(data => {
+        if(data.date) document.getElementById('menu-date').innerText = data.date;
+        if(data.starter) document.getElementById('starter-desc').innerText = data.starter;
+        if(data.main1) document.getElementById('main1-desc').innerText = data.main1;
+        if(data.price1) document.getElementById('main1-price').innerText = data.price1;
+        if(data.main2) document.getElementById('main2-desc').innerText = data.main2;
+        if(data.price2) document.getElementById('main2-price').innerText = data.price2;
+        if(data.dessert) document.getElementById('dessert-desc').innerText = data.dessert;
+      })
+      .catch(err => {
+        console.error("Tagesmenü konnte nicht geladen werden:", err);
+        document.getElementById('menu-date').innerText = "Aktuelles Tagesangebot telefonisch erfragen.";
+      });
+  });
+</script>
 
     <!-- Main Menu Section (Speisekarte) -->
     <section id="speisekarte" class="py-16 lg:py-24 bg-brand-cream border-t border-b border-brand-green/10">
