@@ -37,16 +37,25 @@ collections:
         label: "Daily Menu"
         file: "data/daily-menu.json"
         fields:
-          - { label: "Date", name: "date", widget: "string", default: "Tagesmenü - Montag" }
-          - { label: "Soup / Starter", name: "starter", widget: "string" }
-          - { label: "Main Course 1", name: "main1", widget: "string" }
-          - { label: "Main Course 1 Price", name: "price1", widget: "string" }
-          - { label: "Main Course 2", name: "main2", widget: "string" }
-          - { label: "Main Course 2 Price", name: "price2", widget: "string" }
-          - { label: "Dessert of the Day", name: "dessert", widget: "string" }      - { label: "Date", name: "date", widget: "string", default: "Today's Specials" }
-      - { label: "Soup / Starter", name: "starter", widget: "string" }
-      - { label: "Main Course 1", name: "main1", widget: "string" }
-      - { label: "Main Course 1 Price", name: "price1", widget: "string" }
-      - { label: "Main Course 2", name: "main2", widget: "string" }
-      - { label: "Main Course 2 Price", name: "price2", widget: "string" }
-      - { label: "Dessert of the Day", name: "dessert", widget: "string" }
+          - label: "Date"
+            name: "date"
+            widget: "string"
+            default: "Tagesmenü - Montag"
+          - label: "Soup / Starter"
+            name: "starter"
+            widget: "string"
+          - label: "Main Course 1"
+            name: "main1"
+            widget: "string"
+          - label: "Main Course 1 Price"
+            name: "price1"
+            widget: "string"
+          - label: "Main Course 2"
+            name: "main2"
+            widget: "string"
+          - label: "Main Course 2 Price"
+            name: "price2"
+            widget: "string"
+          - label: "Dessert of the Day"
+            name: "dessert"
+            widget: "string"
